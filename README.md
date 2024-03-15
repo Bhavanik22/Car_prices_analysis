@@ -29,26 +29,26 @@ The "Vehicle Sales and Market Trends Dataset" provides a comprehensive collectio
 
 **Update Frequency:** The dataset may be periodically updated to include new sales transactions and market data, providing fresh insights into ongoing trends in the automotive industry.
 
------------------------------------------------------------------------------------------------------------------
-|Column         |Description                                                                          |Datatype |
-|---------------|-------------------------------------------------------------------------------------|---------|
-|year           |The manufacturing year of the vehicle.                                               |int      |
-|make           |The brand or manufacturer of the vehicle.                                            |text     |
-|model          |The specific model of the vehicle.                                                   |text     |
-|trim           |Additional designation for the vehicle model.                                        |text     |
-|body           |The body type of the vehicle (e.g., SUV, Sedan).                                     |text     |
-|transmission   |The type of transmission in the vehicle (e.g., automatic).                           |text     |
-|vin            |Vehicle Identification Number, a unique code for each vehicle.                       |text     |
-|state          |The state where the vehicle is registered.                                           |text     |
-|condition      |Condition of the vehicle, possibly rated on a scale.                                 |int      |
-|odometer       |The mileage or distance traveled by the vehicle.                                     |int      |
-|color          |Exterior color of the vehicle.                                                       |text     |
-|interior       |Interior color of the vehicle.                                                       |text     |
-|seller         |The entity selling the vehicle.                                                      |text     |
-|mmr            |Manheim Market Report, possibly indicating the estimated market value of the vehicle.|int      |
-|sellingprice   |The price at which the vehicle was sold.                                             |int      |
-|saledate       |The date and time when the vehicle was sold.                                         |text     |
------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+|Column         |Description                                                                          |Datatype    |
+|---------------|-------------------------------------------------------------------------------------|------------|
+|year           |The manufacturing year of the vehicle.                                               |int         |
+|make           |The brand or manufacturer of the vehicle.                                            |Varchar(50) |
+|model          |The specific model of the vehicle.                                                   |Varchar(50) |
+|trim           |Additional designation for the vehicle model.                                        |Varchar(50) |
+|body           |The body type of the vehicle (e.g., SUV, Sedan).                                     |Varchar(50) |
+|transmission   |The type of transmission in the vehicle (e.g., automatic).                           |Varchar(50) |
+|vin            |Vehicle Identification Number, a unique code for each vehicle.                       |Varchar(50) |
+|state          |The state where the vehicle is registered.                                           |Varchar(50) |
+|condition      |Condition of the vehicle, possibly rated on a scale.                                 |int         |
+|odometer       |The mileage or distance traveled by the vehicle.                                     |int         |
+|color          |Exterior color of the vehicle.                                                       |Varchar(50) |
+|interior       |Interior color of the vehicle.                                                       |Varchar(50) |
+|seller         |The entity selling the vehicle.                                                      |Varchar(50) |
+|mmr            |Manheim Market Report, possibly indicating the estimated market value of the vehicle.|int         |
+|sellingprice   |The price at which the vehicle was sold.                                             |int         |
+|saledate       |The date and time when the vehicle was sold.                                         |Varchar(100)|
+-------------------------------------------------------------------------------------------------------------------
 
 **Analysis List:**
 
@@ -114,7 +114,7 @@ Create table Car_prices(
    Trim Varchar(50) NOT NULL,
    Body Varchar(50) NOT NULL,
    Transmission Varchar(50) NOT NULL,
-   Vin int NOT NULL,
+   Vin Varchar(50) NOT NULL,
    State Varchar(50) NOT NULL,
    Condition int NOT NULL,
    Odometer int NOT NULL,
