@@ -1,9 +1,16 @@
-# Car_prices_analysis
-Analysis of Vechicle data set.
 **Vehicle Sales Data**
 
 ****About Data **:**
 The "Vehicle Sales and Market Trends Dataset" provides a comprehensive collection of information pertaining to the sales transactions of various vehicles. This dataset encompasses details such as the year, make, model, trim, body type, transmission type, VIN (Vehicle Identification Number), state of registration, condition rating, odometer reading, exterior and interior colors, seller information, Manheim Market Report (MMR) values, selling prices, and sale dates. The dataset was obtained from the **Kaggle Datasets.**
+
+**Data Used**
+**Data** - Vechicles Sales Data
+
+**Data Cleaning & Analysis** - MySQL Workbench
+
+**Data Visualization** - MySQL Workbench
+
+(<../Vehicle Dashboard.pbit>)
 
 ### **Key Features:**
 **Vehicle Details:** Includes specific information about each vehicle, such as its make, model, trim, and manufacturing year.
@@ -40,7 +47,7 @@ The "Vehicle Sales and Market Trends Dataset" provides a comprehensive collectio
 |transmission   |The type of transmission in the vehicle (e.g., automatic).                           |Varchar(50) |
 |vin            |Vehicle Identification Number, a unique code for each vehicle.                       |Varchar(50) |
 |state          |The state where the vehicle is registered.                                           |Varchar(50) |
-|condition      |Condition of the vehicle, possibly rated on a scale.                                 |int         |
+|condi_rating   |Condition of the vehicle, possibly rated on a scale.                                 |int         |
 |odometer       |The mileage or distance traveled by the vehicle.                                     |int         |
 |color          |Exterior color of the vehicle.                                                       |Varchar(50) |
 |interior       |Interior color of the vehicle.                                                       |Varchar(50) |
@@ -116,7 +123,7 @@ Create table Car_prices(
    Transmission Varchar(50) NOT NULL,
    Vin Varchar(50) NOT NULL,
    State Varchar(50) NOT NULL,
-   Condition int NOT NULL,
+   Condi_rating int NOT NULL,
    Odometer int NOT NULL,
    Color Varchar(50),
    Interior Varchar(50),
@@ -146,8 +153,8 @@ limit 10;
 Ans : Select make, mmr from car_prices where mmr>10000;
 
 ----3.Which is the top brand according to the condition rating?
-Ans : Select make, condition from car_prices
-      order by condition desc
+Ans : Select make, condi_rating from car_prices
+      order by condi_rating desc
       limit 1;
 
 ----4.Which color is sold most of the times?
@@ -163,13 +170,13 @@ Ans : Select interior, count(*) as count from car_prices
       limit 5; 
 
 ----6.Which brand is the most solded by seller?
-Ans : Select make, seller, count (*) as count from car_prices
+Ans : Select make, seller, count(*) as count from car_prices
       group by make, seller
       order by count desc
       limit 1;
 
 ----7.Which model has the highest condtion rating?
-Ans : Select model, max(condition) as highest_rating
+Ans : Select model, max(condi_rating) as highest_rating
       from car_prices
       group by model;
 
@@ -180,7 +187,7 @@ Ans : Select make, max(odometer) as highest_travel_distance
       limit 1;
 
 ----9.How many body types are in the dataset?
-Ans : Select count(distinct body) from car_prices.
+Ans : Select count(distinct body) from car_prices;
 
 ----10. Which state has the highest number of vehicle registration?
 Ans : Select state, count(*) as registration_count
@@ -217,10 +224,10 @@ Ans : Select make, min(sellingprice) as lowest_sellingprice
 
 ----4.Which seller has the highest sales value?
 Ans : Select seller, sum(sellingprice) as top_seller
-from car_prices
-group by seller
-order by top_seller desc
-limit 1;
+      from car_prices
+      group by seller
+      order by top_seller desc
+      limit 1;
 
 ----5.Show the expensive, medium, lowest brands(use case function)
 Ans : Select distinct make, 
