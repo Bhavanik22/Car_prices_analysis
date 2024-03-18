@@ -10,8 +10,6 @@ The "Vehicle Sales and Market Trends Dataset" provides a comprehensive collectio
 
 **Data Visualization** - MySQL Workbench
 
-(<../Vehicle Dashboard.pbit>)
-
 ### **Key Features:**
 **Vehicle Details:** Includes specific information about each vehicle, such as its make, model, trim, and manufacturing year.
 
